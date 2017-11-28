@@ -1,1 +1,1 @@
-# fcc_image_search
+# Backend Challenges boilerplate - package.json
