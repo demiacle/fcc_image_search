@@ -16,6 +16,23 @@ body {
 .footer {
 	margin-top: 60px;
 }
+.smallBox {
+  height: 270px;
+  overflow: hidden;
+}
+code, pre {
+  background-color: #e2f3e2;
+  border: 1px #ffd9d9 solid;
+  color: #245559;
+}
+
+pre{
+  text-align: left;
+  width: 1100px;
+  margin: auto;
+  overflow: overlay;
+  height: 423px;
+}
 
 ol {
 	list-style-position: inside;

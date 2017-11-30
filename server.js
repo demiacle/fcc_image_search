@@ -8,6 +8,8 @@
 var fs = require('fs');
 var express = require('express');
 var app = express();
+var processQuery = require( process.cwd() + '/processQuery.js' )
+var showLatest = require( process.cwd() + '/showLatest.js' )
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
@@ -36,6 +38,16 @@ app.route('/_api/package.json')
 app.route('/')
     .get(function(req, res) {
 		  res.sendFile(process.cwd() + '/views/index.html');
+    })
+
+app.route('/search/:query')
+    .get(function(req, res) {
+      processQuery( res, req.params.query, req.query.page )
+    })
+
+app.route('/latest')
+    .get(function(req, res) {
+		  showLatest(res);
     })
 
 // Respond not found to all the wrong routes
